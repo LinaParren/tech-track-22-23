@@ -2,14 +2,22 @@
 
 Welkom bij mijn super informatieve Readme.md !
 
+<br>
+
+## Wiki
+Bekijk hier mijn wiki!
+
+<br>
 
 ## Concept
 Write down concept here
 
+<br>
 
 ## Functions
 Write down function of the app here
 
+<br>
 
 ## Installation
 To install the project, you must follow the following steps. Make sure that you have a folder in which the project can be saved, and that you are currently in that folder. 
@@ -29,6 +37,7 @@ To install the project, you must follow the following steps. Make sure that you 
   npm run start
   ```
 
+<br>
 
 ## License
 Click here to view the <a href='https://github.com/LinaParren/matching_application/blob/main/LICENSE'>license</a>.
