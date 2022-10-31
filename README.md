@@ -1,11 +1,11 @@
-# Hoi 👋🏻
+# Hi 👋🏻
 
-Welkom bij mijn super informatieve Readme.md !
+Welcome to my very informative Readme.md !
 
 <br>
 
 ## Wiki
-Bekijk <a href ="https://github.com/LinaParren/tech-track-22-23/wiki">hier</a> mijn wiki!
+View my wiki <a href ="https://github.com/LinaParren/tech-track-22-23/wiki">here</a>!
 
 <br>
 
