@@ -5,7 +5,7 @@ Welkom bij mijn super informatieve Readme.md !
 <br>
 
 ## Wiki
-Bekijk hier mijn wiki!
+Bekijk <a href ="https://github.com/LinaParren/tech-track-22-23/wiki">hier</a> mijn wiki!
 
 <br>
 
