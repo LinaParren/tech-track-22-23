@@ -34,7 +34,7 @@ To install the project, you must follow the following steps. Make sure that you 
  
 3. Run this command in the terminal to start the server. 
   ```sh
-  npm run start
+  npm run dev
   ```
 
 <br>
