@@ -4,12 +4,12 @@ Welcome to my very informative Readme.md !
 
 <br>
 
-## Wiki
+## 🌍 Wiki
 View my wiki <a href ="https://github.com/LinaParren/tech-track-22-23/wiki">here</a>!
 
 <br>
 
-## Concept
+## 🚗 Concept
 It is not easy to find a suited parking spot in Amsterdam. Where can I park best? What is it going to cost me? How long can I park there? <br> <br>
 Providing a user with all this information is a first step. However, making this information clear is key. There a different ways of doing this. You can show the user a map, indicating where individual parking zones are and what the rules are with that zone. You can choose to give them an indication of what the cost would be, perhaps divide these per part of the day (morning, evening, etc.). That is what I am going to work with. <br>
 
@@ -17,7 +17,7 @@ I am going to make a map that covers Amsterdam. In this map, you can click on ea
 
 <br>
 
-## Functions
+## ✔️ ☑️ ✅ Functions
 This concept will be able to do a number of things to help the user. 
 - Show a map of Amsterdam
 - Show different zones (probably with use of color)
