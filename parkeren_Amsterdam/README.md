@@ -13,12 +13,18 @@ View my wiki <a href ="https://github.com/LinaParren/tech-track-22-23/wiki">here
 It is not easy to find a suited parking spot in Amsterdam. Where can I park best? What is it going to cost me? How long can I park there? <br>
 Providing a user with all this information is a first step. However, making this information clear is key. There a different ways of doing this. You can show the user a map, indicating where individual parking zones are and what the rules are with that zone. You can choose to give them an indication of what the cost would be, perhaps divide these per part of the day (morning, evening, etc.). That is what I am going to work with. <br>
 
-I am going to make a map that covers Amsterdam. In this map, you can click on each zone that is determined by the Municipality of Amsterdam. When selected a zone, it will show you how much it costs to park there. It will give you the option to select a time zone, which gives you a more accurate indication about what the cost for parking will be. 
+I am going to make a map that covers Amsterdam. In this map, you can click on each zone that is determined by the Municipality of Amsterdam. When selected a zone, it will show you how much it costs to park there. It will give you the option to select a time slot, which gives you a more accurate indication about what the cost for parking will be. 
 
 <br>
 
 ## Functions
-Write down function of the app here
+This concept will be able to do a number of things to help the user. 
+- Show a map of Amsterdam
+- Show different zones (probably with use of color)
+- Be able to click on a zone
+- Be able to click on time slot (morning, evening, etc.)
+- Get indication of cost for parking in specific zone
+- Get indication of cost for parking in specific time slot
 
 <br>
 
