@@ -17,7 +17,7 @@ I am going to make a map that covers Amsterdam. In this map, you can click on ea
 
 <br>
 
-## ✔️ ☑️ ✅ Functions
+## ✅ Functions
 This concept will be able to do a number of things to help the user. 
 - Show a map of Amsterdam
 - Show different zones (probably with use of color)
@@ -28,7 +28,7 @@ This concept will be able to do a number of things to help the user.
 
 <br>
 
-## Installation
+## ⚙️ Installation
 To install the project, you must follow the following steps. Make sure that you have a folder in which the project can be saved, and that you are currently in that folder. 
 
 1. Clone the Github locally on your computer. Put it in a suited folder, so you can find it again later. You can than locally look at and make changes to the repository.
@@ -48,5 +48,5 @@ To install the project, you must follow the following steps. Make sure that you 
 
 <br>
 
-## License
+## 🪪 License
 Click here to view the <a href='https://github.com/LinaParren/matching_application/blob/main/LICENSE'>license</a>.
