@@ -1,8 +1,9 @@
 /* <reference path="./typings/index.d.ts" /> */
+import { color } from "d3";
 import json from "./tarieven.json" assert { type: "json" };
 
 
-var map = L.map('map').setView([52.3702157, 4.8951679], 11);
+var map = L.map('map').setView([52.3702157, 4.8951679], 14);
 
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -24,7 +25,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 console.log(Object.keys(json));
 
 // Object.keys(json).forEach(key => {
-//     // console.log(json[key].location.coordinates[1][0]);
+// })
+
+
+    // console.log(json[key].location.coordinates[1][0]);
 
 //     // L.polygon(json[key].location.coordinates[0].flat().map(item => item.reverse()), {color: 'black'}).addTo(map)
 //     L.polygon(json['T11A'].location.coordinates[0].map(), {color: 'black'}).addTo(map);
@@ -33,20 +37,18 @@ console.log(Object.keys(json));
 // var polygon = L.polygon(json['T11A'].location.coordinates[0].flat().map(item => item.reverse()), {color: 'black'}).addTo(map);
 
 // ------ COMMENT DIT UIT!!!!!
-// var polygon = L.polygon(json['T11A'].location.coordinates[0].map(item => item.reverse()), {color: 'black'}).addTo(map);
-// var polygon21 = L.polygon(json['T12A'].location.coordinates[0][0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
-// var polygon22 = L.polygon(json['T12A'].location.coordinates[0][1].map(item => item.reverse()), {color: 'green'}).addTo(map);
-// var polygon23 = L.polygon(json['T12A'].location.coordinates[0][2].map(item => item.reverse()), {color: 'green'}).addTo(map);
-// var polygon24 = L.polygon(json['T12A'].location.coordinates[0][3].map(item => item.reverse()), {color: 'green'}).addTo(map);
-// var polygon25 = L.polygon(json['T12A'].location.coordinates[1][0].map(item => item.reverse()), {color: 'red'}).addTo(map);
-// var polygon22 = L.polygon(json['T12A'].location.coordinates[2][0].map(item => item.reverse()), {color: 'yellow'}).addTo(map);
-// var polygon22 = L.polygon(json['T12A'].location.coordinates[2][1].map(item => item.reverse()), {color: 'orange'}).addTo(map);
-// var polygon22 = L.polygon(json['T12A'].location.coordinates[2][2].map(item => item.reverse()), {color: 'orange'}).addTo(map);
-// var polygon22 = L.polygon(json['T12A'].location.coordinates[2][3].map(item => item.reverse()), {color: 'orange'}).addTo(map);
+var polygon = L.polygon(json['T11A'].location.coordinates[0].map(item => item.reverse()), {color: 'black'}).addTo(map);
+var polygon = L.polygon(json['T11N'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
+var polygon21 = L.polygon(json['T12A'].location.coordinates[0][0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
+var polygon22 = L.polygon(json['T12A'].location.coordinates[1][0].map(item => item.reverse()), {color: 'green'}).addTo(map);
+var polygon24 = L.polygon(json['T12A'].location.coordinates[0][3].map(item => item.reverse()), {color: 'green'}).addTo(map);
+var polygon25 = L.polygon(json['T12A'].location.coordinates[1][0].map(item => item.reverse()), {color: 'red'}).addTo(map);
+var polygon22 = L.polygon(json['T12A'].location.coordinates[2][0].map(item => item.reverse()), {color: 'yellow'}).addTo(map);
+var polygon22 = L.polygon(json['T12A'].location.coordinates[2][1].map(item => item.reverse()), {color: 'orange'}).addTo(map);
+var polygon22 = L.polygon(json['T12A'].location.coordinates[2][2].map(item => item.reverse()), {color: 'orange'}).addTo(map);
+var polygon22 = L.polygon(json['T12A'].location.coordinates[2][3].map(item => item.reverse()), {color: 'orange'}).addTo(map);
 // -----------
 
-
-var polygon = L.polygon(key[0].location.coordinates[0].map(item => item.reverse()), {color: 'black'}).addTo(map)
 
 
 
