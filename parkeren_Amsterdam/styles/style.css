@@ -14,3 +14,7 @@ button {
 	right: .5em;
 	padding: .25em;
 }
+
+#map { 
+	height: 100vh; 
+}

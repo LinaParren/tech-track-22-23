@@ -3,16 +3,21 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.ico" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css">
   <title>Tech-track Boilerplate App</title>
+
+  <!-- ---- -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <!-- ---- -->
+
 </head>
 
 <body>
 
-  <h1></h1>
-
-  <svg width="200" height="200">
+  <!-- <svg width="200" height="200">
     <circle cx="100" cy="100" r="50" stroke="black" fill="url(#grad1)" />
 
     <circle cx="90" cy="85" r="25" fill="white" />
@@ -44,7 +49,27 @@
   </svg>
 
 
-  <button>get another emoji!</button>
+  <button>get another emoji!</button> -->
+
+  <!-- <table>
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table> -->
+
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+
+  <div id="map"></div>
+
+
+  <!-- <script src="./scripts/main.js"></script> -->
+  <!-- <script src="mapview.js"></script> -->
+  <script type="module" src="mapview.js"></script>
 
 </body>
 
