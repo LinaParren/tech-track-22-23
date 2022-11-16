@@ -1,5 +1,5 @@
-// import "../mapview.js";
-// import "../scripts/test.js";
+import "../mapview.js";
+import "./test.js";
 // import "./test.js"
 
 import '../styles/style.css';

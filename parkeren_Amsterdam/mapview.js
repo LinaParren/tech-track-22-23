@@ -1,7 +1,7 @@
 /* <reference path="./typings/index.d.ts" /> */
-import { color } from "d3";
+// import { color } from "d3";
 import json from "./tarieven.json" assert { type: "json" };
-import "./scripts/test.js"
+// import "./scripts/test.js"
 
 
 
@@ -41,9 +41,9 @@ console.log(Object.keys(json));
 // ------ COMMENT DIT UIT!!!!!
 var polygon1 = L.polygon(json['T11A'].location.coordinates[0].map(item => item.reverse()), {color: 'black'}).addTo(map);
 var polygon2 = L.polygon(json['T11N'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
-export var polygon21 = L.polygon(json['T12A'].location.coordinates[0][0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
-export var polygon22 = L.polygon(json['T12A'].location.coordinates[0][1].map(item => item.reverse()), {color: 'blue'}).addTo(map);
-export var polygon23 = L.polygon(json['T12A'].location.coordinates[0][2].map(item => item.reverse()), {color: 'blue'}).addTo(map);
+var polygon21 = L.polygon(json['T12A'].location.coordinates[0][0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
+var polygon22 = L.polygon(json['T12A'].location.coordinates[0][1].map(item => item.reverse()), {color: 'blue'}).addTo(map);
+var polygon23 = L.polygon(json['T12A'].location.coordinates[0][2].map(item => item.reverse()), {color: 'blue'}).addTo(map);
 var polygon24 = L.polygon(json['T12A'].location.coordinates[0][3].map(item => item.reverse()), {color: 'blue'}).addTo(map);
 var polygon25 = L.polygon(json['T12A'].location.coordinates[1][0].map(item => item.reverse()), {color: 'yellow'}).addTo(map);
 var polygon26 = L.polygon(json['T12A'].location.coordinates[2][0].map(item => item.reverse()), {color: 'red'}).addTo(map);
@@ -79,7 +79,9 @@ var polygon36 = L.polygon(json['T12A'].location.coordinates[9][0].map(item => it
 // polygon34 = L.polygon(json['T12A'].location.coordinates[7][0].map(item => item.reverse()), {color: 'gold'}).addTo(map),
 // polygon35 = L.polygon(json['T12A'].location.coordinates[8][0].map(item => item.reverse()), {color: 'white'}).addTo(map),
 // polygon36 = L.polygon(json['T12A'].location.coordinates[9][0].map(item => item.reverse()), {color: 'aqua'}).addTo(map)
-// ]
+// ];
+
+// export {polygons};
 // -----------
 
 
@@ -95,59 +97,14 @@ var polygon36 = L.polygon(json['T12A'].location.coordinates[9][0].map(item => it
 //     .openPopup();
 
 
-// export default {
-//     polygon1,
-//     polygon2,
-//     polygon21,
-//     polygon22,
-//     polygon23,
-//     polygon24,
-//     polygon25,
-//     polygon26,
-//     polygon27,
-//     polygon28,
-//     polygon29,
-//     polygon30,
-//     polygon31,
-//     polygon32,
-//     polygon33,
-//     polygon34,
-//     polygon35,
-//     polygon36
-// }
-
-// export {polygons};
-
-
-function kleur()
-{
-  if (document.getElementById("zone2").checked) 
-  {
-    polygons.polygon21 = L.polygon(json['T12A'].location.coordinates[0][0].map(item => item.reverse()), {color: 'green'}).addTo(map);
-  } else {
-    polygons.polygon21 = L.polygon(json['T12A'].location.coordinates[0][0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
-  }
+export default {
+    polygon1: polygon1,
+    polygon2: polygon2,
+    polygon21: polygon21,
+    polygon22: polygon22,
+    polygon23: polygon23,
+    polygon24: polygon24,
+    polygon25: polygon25,
+    polygon26: polygon26
 }
 
-function kleur1() {
-    var checkbox = document.getElementById("zone1");
-    var polygon21 = L.polygon(json['T12A'].location.coordinates[0][0]);
-  if (checkbox.checked == true) 
-  {
-    polygons.polygon21.style.color = "green";
-  } else {
-    polygons.polygon21.style.color = "blue";
-  }
-}
-
-
-function myFunction() {
-    var checkBox = document.getElementById("myCheck");
-    var text = document.getElementById("texttest");
-    if (checkBox.checked == true){
-      text.style.color = "green";
-    }
-    else {
-      text.style.color = "blue";
-    }
-}
