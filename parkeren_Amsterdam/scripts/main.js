@@ -1,93 +1,50 @@
-// const h1 = document.querySelector('h1');
-// const button = document.querySelector('button');
-// const emojis = ['😃', '🙁', '🐭', '🍪', '🎱', '📊'];
+// import "../mapview.js";
+// import "../scripts/test.js";
+// import "./test.js"
 
-// button.addEventListener('click', pickEmoji);
+import '../styles/style.css';
 
-// function pickEmoji() {
-// 	h1.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-// }
+// import * as d3 from 'd3';
+// import polygons from "../tarieven.json";
 
-// pickEmoji(); 
+// fetch("../tarieven.json")
+// .then(response => {
+//    return response.json();
+// })
+// .then(data => console.log(data));
 
-// ---
-
-// import data from '../tarieven.json' assert {type: 'json'};
-
-// const dataj = data;
-
-// ---
-
-fetch("../tarieven.json")
-.then(response => {
-   return response.json();
-})
-.then(data => console.log(data));
-
-// ----
-
-
-// {
-//   name: 'Alice',
-//   country: 'Austria',
-//   tasks: [ 'develop', 'design', 'test' ],
-//   age: 30
-// }
-// console.log(data.property);
-
-// console.log(data.description);
-// console.log(data.location.type);
-// console.log("hallo");
 
 // -------------
 
 
-// const data = [
-// 	{
-// 		id: 1,
-// 		name: 'Robert',
-// 		kaas: true
-// 	},
-// 	{
-// 		id: 2,
-// 		name: 'Vincent',
-// 		kaas: false
-// 	},
-// 	{
-// 		id: 3,
-// 		name: 'Laura',
-// 		kaas: true
-// 	}
-// ]
+// function generateTable() {
 
-function generateTable() {
+// 	let table = document.querySelector('table'); // Grab the entire table
+// 	let theading = document.querySelector('thead tr'); // Grab the row in the thead
+// 	let tbody = document.querySelector('tbody') // Grab the body
 
-	let table = document.querySelector('table'); // Grab the entire table
-	let theading = document.querySelector('thead tr'); // Grab the row in the thead
-	let tbody = document.querySelector('tbody') // Grab the body
+// 	Object.keys(dataj).forEach(key => {
 
-	Object.keys(dataj).forEach(key => {
+// 		let newElement = document.createElement('th');
+// 		newElement.textContent = key;
+// 		theading.appendChild(newElement);
+// 	})
 
-		let newElement = document.createElement('th');
-		newElement.textContent = key;
-		theading.appendChild(newElement);
-	})
+// 	dataj.forEach(obj => {
 
-	dataj.forEach(obj => {
+// 		let tr = document.createElement('tr');
+// 		tbody.appendChild(tr);
 
-		let tr = document.createElement('tr');
-		tbody.appendChild(tr);
+// 		for (const [key, value] of Object.entries(obj)) {
 
-		for (const [key, value] of Object.entries(obj)) {
+// 			let td = document.createElement('td');
+// 			td.textContent = value; // Use the value, not the property / key!
+// 			tr.appendChild(td) // And append it to the row we just made.
 
-			let td = document.createElement('td');
-			td.textContent = value; // Use the value, not the property / key!
-			tr.appendChild(td) // And append it to the row we just made.
+// 		}
 
-		}
+// 	})
+//     // console.log("hallo");
+// }
 
-	})
-    // console.log("hallo");
-}
-
-generateTable();
+// generateTable();

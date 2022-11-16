@@ -17,59 +17,44 @@
 
 <body>
 
-  <!-- <svg width="200" height="200">
-    <circle cx="100" cy="100" r="50" stroke="black" fill="url(#grad1)" />
-
-    <circle cx="90" cy="85" r="25" fill="white" />
-
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgb(105,105,105);stop-opacity:1" />
-    </linearGradient>
-
-    <text x="80" y="95" font-size="40px">8
-      <animateTransform attributeType="xml" attributeName="transform" type="rotate" values="80 0 0; 0 95 0" dur="5s"
-        repeatCount="indefinite" />
-    </text>
-  </svg>
-
-
-  <svg width="200" height="200">
-    <circle cx="100" cy="100" r="50" stroke="black" fill="url(#grad2)" />
-
-    <polygon points="90,65 110,85 70,85" fill="#42280E" />
-    <polygon points="130,95 145,115 115,115" fill="#42280E" />
-    <polygon points="90,115 110,135 70,135" fill="#42280E" />
-
-    <linearGradient id="grad2" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" style="stop-color:rgb(210,105,30);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgb(205,133,63);stop-opacity:1" />
-    </linearGradient>
-
-  </svg>
-
-
-  <button>get another emoji!</button> -->
-
-  <!-- <table>
-    <thead>
-      <tr>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table> -->
-
   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
 
+  <section>
+    <div>
 
-  <div id="map"></div>
+      <h2>Kies zone en tijd</h2>
+      <p>Klik op wat je wil zien</p>
+
+      <input type="checkbox" id="myCheck" onclick="myFunction()">
+      <label for="myCheck"> testje </label>
+      <p id="texttest">Checkbox is CHECKED!</p>
+
+      <hr>
+
+      <input type="checkbox" id="zone1" name="zone1" value="7,50" onclick="kleur1()">
+      <label for="zone1"> 7,50 </label>
+      <input type="checkbox" id="zone2" name="zone2" value="6,50" onclick="kleur()">
+      <label for="zone2"> 6,50 </label>
+      <input type="checkbox" id="zone3" name="zone3" value="5,50">
+      <label for="zone3"> 5,50 </label>
+
+      <input type="checkbox" id="tijd1" name="tijd1" value="ma-vr">
+      <label for="tijd1"> ma-vr </label>
+      <input type="checkbox" id="tijd2" name="tijd2" value="za-zo">
+      <label for="tijd2"> za-zo </label>
+      <input type="checkbox" id="tijd3" name="tijd3" value="zo">
+      <label for="tijd3"> zo </label>
+
+    </div>
+    <div id="map"></div>
+  </section>
 
 
-  <!-- <script src="./scripts/main.js"></script> -->
-  <!-- <script src="mapview.js"></script> -->
+
+  <!-- <script type="module" src="./scripts/test.js"></script> -->
   <script type="module" src="mapview.js"></script>
+  <!-- <script type="module" src="./scripts/main.js"></script> -->
 
 </body>
 
