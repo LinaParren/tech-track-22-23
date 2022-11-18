@@ -4,7 +4,7 @@ import json from "./tarieven.json" assert { type: "json" };
 // import "./scripts/test.js"
 
 
-
+// ---------------------------------------------------------
 var map = L.map('map').setView([52.3702157, 4.8951679], 12);
 
 
@@ -12,25 +12,26 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+// ----------------------------------------------------------------------------------------------------
 
-// ---
-// var latlngs = [
-//     [[52.38601642804, 4.883046248532],
-//     [52.385546291723, 4.8843027371309],
-//     [52.385221195676, 4.8850072727968],
-//     [52.38428525197, 4.8866559660499]],
-//     [[52.383153965716, 4.8936136916361],
-//     [52.383751044987, 4.8963837433116],
-//     [52.382107426235, 4.8976786877494]]
-//   ];
+
 
 console.log(Object.keys(json));
 
+Object.keys(json).forEach(key => {
+  console.log(json[key].location.coordinates[0][0]);  
+})
+
 // Object.keys(json).forEach(key => {
-// })
+//     forEach(json[key].location.coordinates[0][0] => {
+//         console.log("1");  
+//     })
+//   })
+
+// console.log(json[key].location.coordinates[1][0]);
 
 
-    // console.log(json[key].location.coordinates[1][0]);
+
 
 //     // L.polygon(json[key].location.coordinates[0].flat().map(item => item.reverse()), {color: 'black'}).addTo(map)
 //     L.polygon(json['T11A'].location.coordinates[0].map(), {color: 'black'}).addTo(map);
@@ -52,7 +53,7 @@ var polygon34 = L.polygon(json['T13D'].location.coordinates[0][0].map(item => it
 var polygon35 = L.polygon(json['T13G'].location.coordinates[0][0].map(item => item.reverse()), {color: 'yellow'}).addTo(map);
 var polygon41 = L.polygon(json['T14B'].location.coordinates[0].map(item => item.reverse()), {color: 'green'}).addTo(map);
 var polygon42 = L.polygon(json['T14C'].location.coordinates[0][0].map(item => item.reverse()), {color: 'green'}).addTo(map);
-var polygon43 = L.polygon(json['T14E'].location.coordinates[0][0].map(item => item.reverse()), {color: 'green'}).addTo(map);
+var polygon43 = L.polygon(json['T14E'].location.coordinates[0].map(item => item.reverse()), {color: 'green'}).addTo(map);
 var polygon44 = L.polygon(json['T14G'].location.coordinates[0].map(item => item.reverse()), {color: 'green'}).addTo(map);
 var polygon51 = L.polygon(json['T16A'].location.coordinates[0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
 var polygon52 = L.polygon(json['T16B'].location.coordinates[0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
@@ -68,7 +69,7 @@ var polygon72 = L.polygon(json['T13B_U22'].location.coordinates[0].map(item => i
 var polygon73 = L.polygon(json['T14B_U21'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
 var polygon74 = L.polygon(json['T14B_U22'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
 var polygon75 = L.polygon(json['T14B_U23'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
-var polygon76 = L.polygon(json['T14B_U25'].location.coordinates[0][0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
+var polygon76 = L.polygon(json['T14B_U25'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
 
 // Verdeling prijzen en zones:
 // 1 7,50 -> T11N + T11A
@@ -81,9 +82,20 @@ var polygon76 = L.polygon(json['T14B_U25'].location.coordinates[0][0].map(item =
 // -----------
 
 
+
 // -----------
-// var polygon1 = L.polygon(json['T11A'].location.coordinates[0].map(item => item.reverse()), {color: 'black'}).addTo(map);
-// var polygon2 = L.polygon(json['T11N'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
+// console.log(json);
+
+// json.forEach(json => {
+//     console.log(description);
+// });
+// -----------
+
+
+
+// -----------
+// var polygon11 = L.polygon(json['T11A'].location.coordinates[0].map(item => item.reverse()), {color: 'black'}).addTo(map);
+// var polygon12 = L.polygon(json['T11N'].location.coordinates[0].map(item => item.reverse()), {color: 'brown'}).addTo(map);
 // var polygon21 = L.polygon(json['T12A'].location.coordinates[0][0].map(item => item.reverse()), {color: 'blue'}).addTo(map);
 // var polygon22 = L.polygon(json['T12A'].location.coordinates[0][1].map(item => item.reverse()), {color: 'blue'}).addTo(map);
 // var polygon23 = L.polygon(json['T12A'].location.coordinates[0][2].map(item => item.reverse()), {color: 'blue'}).addTo(map);
@@ -115,10 +127,10 @@ var polygon76 = L.polygon(json['T14B_U25'].location.coordinates[0][0].map(item =
 //     L.polygon(json['T12D'].location.coordinates[0].map(item => item.reverse()), {color: 'orange'}).addTo(map)]
 // var polygon31 = [
 //     L.polygon(json['T13A'].location.coordinates[0].map(item => item.reverse()), {color: 'yellow'}).addTo(map),
-//     L.polygon(json['T13B'].location.coordinates[0].map(item => item.reverse()), {color: 'yellow'}).addTo(map),
+//     L.polygon(json['T13B'].location.coordinates[0][0].map(item => item.reverse()), {color: 'yellow'}).addTo(map),
 //     L.polygon(json['T13C'].location.coordinates[0].map(item => item.reverse()), {color: 'yellow'}).addTo(map),
-//     L.polygon(json['T13D'].location.coordinates[0].map(item => item.reverse()), {color: 'yellow'}).addTo(map),
-//     L.polygon(json['T13G'].location.coordinates[0].map(item => item.reverse()), {color: 'yellow'}).addTo(map)]
+//     L.polygon(json['T13D'].location.coordinates[0][0].map(item => item.reverse()), {color: 'yellow'}).addTo(map),
+//     L.polygon(json['T13G'].location.coordinates[0][0].map(item => item.reverse()), {color: 'yellow'}).addTo(map)]
 // var polygon41 = [
 //     L.polygon(json['T14B'].location.coordinates[0].map(item => item.reverse()), {color: 'green'}).addTo(map),
 //     L.polygon(json['T14C'].location.coordinates[0].map(item => item.reverse()), {color: 'green'}).addTo(map),
@@ -187,7 +199,7 @@ export default {
     polygon73: polygon73,
     polygon74: polygon74,
     polygon75: polygon75,
-    polygon76: polygon76,
+    polygon76: polygon76
 }
 
 
@@ -198,5 +210,5 @@ export default {
 //     polygon41: polygon41,
 //     polygon51: polygon51,
 //     polygon61: polygon61,
-//     polygon71: polygon71,
+//     polygon71: polygon71
 // }
