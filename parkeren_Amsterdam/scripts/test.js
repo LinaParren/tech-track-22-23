@@ -1,10 +1,8 @@
 // import data from '../tarieven.json' assert {type: 'json'};
 
 
-import polygons from "../mapview";
+// import polygons from "../mapview";
 
-console.log('dit is hier')
-console.log(polygons.polygon1);
 
 // // ---------------------------------------------------------
 
@@ -152,8 +150,6 @@ checkbox.addEventListener('click', changeCheckbox);
 function changeCheckbox() {
     var checkBox = document.getElementById("myCheck");
     var text = document.getElementById("texttest");
-
-    console.log(polygons.polygon21);
 
     if (checkBox.checked == true){
       text.style.color = "green";
