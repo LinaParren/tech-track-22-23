@@ -148,19 +148,58 @@ let checkbox = document.querySelector('#myCheck');
 checkbox.addEventListener('click', changeCheckbox);
 
 function changeCheckbox() {
-    var checkBox = document.getElementById("myCheck");
-    var text = document.getElementById("texttest");
+  var checkBox = document.getElementById("myCheck");
+  var text = document.getElementById("texttest");
 
-    if (checkBox.checked == true){
-      text.style.color = "green";
-    }
-    else {
-      text.style.color = "blue";
-    }
+  if (checkBox.checked == true) {
+    text.style.color = "green";
+  } else {
+    text.style.color = "blue";
+  }
 }
 
+// ----------------------------------------------------
 
+// let zone1 = document.querySelector('#zone1');
+// zone1.addEventListener('change', kleur);
 
+// function kleur() {
+//   var check1 = document.getElementById("zone1");
+
+// Object.keys(json).forEach(key => {
+//       let tariefObj = json[key].tarieven[0];
+//       let tarief = Object.keys(tariefObj)[0];
+
+//       if (check1.checked == true) {
+//         polygons.setStyle({color: 'red'});
+//       } else {
+//         polygons.setStyle({color: 'none'});
+//       }
+// }
+
+// function getColor(tarief) {
+//   switch (tarief) {
+//     if (case '7,50') {
+//       return 'red';
+//       break;
+//     } else if (case '6,00') {
+//       return 'orange';
+//       break;
+//     } else if (case '4,50') {
+//       return 'yellow';
+//       break;
+//     } else if (case '3,50') {
+//       return 'pink';
+//       break;
+//     } else if (case '1,40') {
+//       return 'blue';
+//       break;
+//     } else if (case '0,10') {
+//       return 'purple';
+//       break;
+//     }
+//   }
+// }
 
 
 
@@ -168,112 +207,133 @@ function changeCheckbox() {
 
 // ---------------------------------------------------------
 
-let zone1 = document.querySelector('#zone1');
-zone1.addEventListener('change', kleur);
+// let zone1 = document.querySelector('#zone1');
+// zone1.addEventListener('change', kleur);
 
-function kleur() {
-    var check1 = document.getElementById("zone1");
+// function kleur() {
+//   var check1 = document.getElementById("zone1");
 
-    if (check1.checked == true){
-      polygons.polygon11.setStyle({color: 'red'});
-    }
-    else {
-      polygons.polygon11.setStyle({color: 'none'});
-    }
-}
-
-// ---------------------------------------------------------
-
-let zone2 = document.querySelector('#zone2');
-zone2.addEventListener('change', kleur2);
-
-function kleur2() {
-    var check2 = document.getElementById("zone2");
-
-    if (check2.checked == true){
-      polygons.polygon21.setStyle({color: 'orange'});
-    }
-    else {
-      polygons.polygon21.setStyle({color: 'none'});
-    }
-}
+//   if (check1.checked == true) {
+//     polygons.polygon11.setStyle({
+//       color: 'red'
+//     });
+//   } else {
+//     polygons.polygon11.setStyle({
+//       color: 'none'
+//     });
+//   }
+// }
 
 // ---------------------------------------------------------
 
-let zone3 = document.querySelector('#zone3');
-zone3.addEventListener('change', kleur3);
+// let zone2 = document.querySelector('#zone2');
+// zone2.addEventListener('change', kleur2);
 
-function kleur3() {
-    var check3 = document.getElementById("zone3");
+// function kleur2() {
+//   var check2 = document.getElementById("zone2");
 
-    if (check3.checked == true){
-      polygons.polygon31.setStyle({color: 'yellow'});
-    }
-    else {
-      polygons.polygon31.setStyle({color: 'none'});
-    }
-}
-
-// ---------------------------------------------------------
-
-let zone4 = document.querySelector('#zone4');
-zone4.addEventListener('change', kleur4);
-
-function kleur4() {
-    var check4 = document.getElementById("zone4");
-
-    if (check4.checked == true){
-      polygons.polygon41.setStyle({color: 'green'});
-    }
-    else {
-      polygons.polygon41.setStyle({color: 'none'});
-    }
-}
+//   if (check2.checked == true) {
+//     polygons.polygon21.setStyle({
+//       color: 'orange'
+//     });
+//   } else {
+//     polygons.polygon21.setStyle({
+//       color: 'none'
+//     });
+//   }
+// }
 
 // ---------------------------------------------------------
 
-let zone5 = document.querySelector('#zone5');
-zone5.addEventListener('change', kleur5);
+// let zone3 = document.querySelector('#zone3');
+// zone3.addEventListener('change', kleur3);
 
-function kleur5() {
-    var check5 = document.getElementById("zone5");
+// function kleur3() {
+//   var check3 = document.getElementById("zone3");
 
-    if (check5.checked == true){
-      polygons.polygon51.setStyle({color: 'blue'});
-    }
-    else {
-      polygons.polygon51.setStyle({color: 'none'});
-    }
-}
-
-// ---------------------------------------------------------
-
-let zone6 = document.querySelector('#zone6');
-zone6.addEventListener('change', kleur6);
-
-function kleur6() {
-    var check6 = document.getElementById("zone6");
-
-    if (check6.checked == true){
-      polygons.polygon61.setStyle({color: 'purple'});
-    }
-    else {
-      polygons.polygon61.setStyle({color: 'none'});
-    }
-}
+//   if (check3.checked == true) {
+//     polygons.polygon31.setStyle({
+//       color: 'yellow'
+//     });
+//   } else {
+//     polygons.polygon31.setStyle({
+//       color: 'none'
+//     });
+//   }
+// }
 
 // ---------------------------------------------------------
 
-let zone7 = document.querySelector('#zone7');
-zone7.addEventListener('change', kleur7);
+// let zone4 = document.querySelector('#zone4');
+// zone4.addEventListener('change', kleur4);
 
-function kleur7() {
-    var check7 = document.getElementById("zone7");
+// function kleur4() {
+//   var check4 = document.getElementById("zone4");
 
-    if (check7.checked == true){
-      polygons.polygon71.setStyle({color: 'brown'});
-    }
-    else {
-      polygons.polygon71.setStyle({color: 'none'});
-    }
-}
+//   if (check4.checked == true) {
+//     polygons.polygon41.setStyle({
+//       color: 'green'
+//     });
+//   } else {
+//     polygons.polygon41.setStyle({
+//       color: 'none'
+//     });
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone5 = document.querySelector('#zone5');
+// zone5.addEventListener('change', kleur5);
+
+// function kleur5() {
+//   var check5 = document.getElementById("zone5");
+
+//   if (check5.checked == true) {
+//     polygons.polygon51.setStyle({
+//       color: 'blue'
+//     });
+//   } else {
+//     polygons.polygon51.setStyle({
+//       color: 'none'
+//     });
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone6 = document.querySelector('#zone6');
+// zone6.addEventListener('change', kleur6);
+
+// function kleur6() {
+//   var check6 = document.getElementById("zone6");
+
+//   if (check6.checked == true) {
+//     polygons.polygon61.setStyle({
+//       color: 'purple'
+//     });
+//   } else {
+//     polygons.polygon61.setStyle({
+//       color: 'none'
+//     });
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone7 = document.querySelector('#zone7');
+// zone7.addEventListener('change', kleur7);
+
+// function kleur7() {
+//   var check7 = document.getElementById("zone7");
+
+//   if (check7.checked == true) {
+//     polygons.polygon71.setStyle({
+//       color: 'brown'
+//     });
+//   } else {
+//     polygons.polygon71.setStyle({
+//       color: 'none'
+//     });
+//   }
+// }

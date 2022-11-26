@@ -1,7 +1,7 @@
 /* <reference path="./typings/index.d.ts" /> */
 // import { color } from "d3";
 import json from "./tarieven.json" assert {
-    type: "json"
+  type: "json"
 };
 // import "./scripts/test.js"
 
@@ -11,41 +11,407 @@ var map = L.map('map').setView([52.3702157, 4.8951679], 12);
 
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 // ----------------------------------------------------------------------------------------------------
 
 console.log(json);
 
-const colors = ['red', 'orange', 'yellow', 'pink', 'blue', 'green', 'purple']
+// const colors = ['red', 'orange', 'yellow', 'pink', 'blue', 'green', 'purple'];
 
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
+function getColor(tarief) {
+    switch (tarief) {
+        case '7,50':
+            return 'red';
+            break;
+        case '6,00':
+            return 'orange';
+            break;
+        case '4,50':
+            return 'yellow';
+            break;
+        case '3,50':
+            return 'pink';
+            break;
+        case '1,40':
+            return 'blue';
+            break;
+        case '0,10':
+            return 'purple';
+            break;
+        default:
+            return 'black';
+    }
 }
 
 const dataSet = Object.keys(json).map(key => {
 
-    let polygonArray;
+  let polygonArray;
 
-    if(json[key].location.type === 'MultiPolygon') {
-        polygonArray = json[key].location.coordinates[0];
-    } else if(json[key].location.type === 'Polygon') {
-        polygonArray = json[key].location.coordinates;
-    }
+  if (json[key].location.type === 'MultiPolygon') {
+    polygonArray = json[key].location.coordinates[0];
+  } else if (json[key].location.type === 'Polygon') {
+    polygonArray = json[key].location.coordinates;
+  }
 
-    return {
-        zoneId: key,
-        areas: polygonArray,
-        tarieven: json[key].tarieven,
-        polygons: polygonArray.map(arr => {
-            return L.polygon(arr.map(item => item.reverse()), {color: colors[randomNumber(0, 6)]}).addTo(map)
-        })
-    }
+  return {
+    zoneId: key,
+    areas: polygonArray,
+    tarieven: json[key].tarieven[0],
+    polygons: polygonArray.map(arr => {
+      // return L.polygon(arr.map(item => item.reverse()), {color: getColor(Object.keys(json[key].tarieven[0])[0])}).addTo(map)
+      return L.polygon(arr.map(item => item.reverse()), {color: "none"}).addTo(map)
+    })
+  }
+  
 })
+
+window.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('input[type=checkbox]');
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', changeCheckbox)
+  })
+})
+
+function changeCheckbox(event) {
+  dataSet.forEach(item => {
+
+    if(Object.keys(item.tarieven)[0] === event.target.value) {
+      item.polygons.forEach(polygon => {
+        if(event.target.checked) {
+          polygon.setStyle({color: getColor(event.target.value)})
+        } else {
+          polygon.setStyle({color: 'none'})
+        }
+      })
+    }
+  })
+}
 
 console.log(dataSet);
 
+
+// ------------------------------------------
+
+
+
+
+// const dataSet = Object.keys(json).map(key => {
+
+// console.log(dataSet);
+
+//   let zone1 = document.querySelector('#zone1');
+//   zone1.addEventListener('change', kleur);
+//   let zone2 = document.querySelector('#zone2');
+//   zone2.addEventListener('change', kleur);
+//   let zone3 = document.querySelector('#zone3');
+//   zone3.addEventListener('change', kleur);
+//   let zone4 = document.querySelector('#zone4');
+//   zone4.addEventListener('change', kleur);
+//   let zone5 = document.querySelector('#zone5');
+//   zone5.addEventListener('change', kleur);
+//   let zone6 = document.querySelector('#zone6');
+//   zone6.addEventListener('change', kleur);
+
+//   let tariefObj = json[key].tarieven[0];
+//   let tarief = Object.keys(tariefObj)[0];
+
+//   function kleur() {
+
+//     var check1 = document.getElementById("zone1");
+//     if (tarief == "7,50" && check1.checked == true) {
+//       console.log("het is 7,50 en checked");
+//     } else if (tarief == "7,50" && check1.checked == false) {
+//       console.log("het is 7,50 en niet checked");
+//     }
+
+//     var check2 = document.getElementById("zone2");
+//     if (tarief == "6,00" && check2.checked == true) {
+//       console.log("het is 6,00 en checked");
+//     } else if (tarief == "6,00" && check2.checked == false) {
+//       console.log("het is 6,00 en niet checked");
+//     }
+
+//     var check3 = document.getElementById("zone3");
+//     if (tarief == "4,50" && check3.checked == true) {
+//       console.log("het is 4,50 en checked");
+//     } else if (tarief == "4,50" && check3.checked == false) {
+//       console.log("het is 4,50 en niet checked");
+//     }
+
+//     var check4 = document.getElementById("zone4");
+//     if (tarief == "3,50" && check4.checked == true) {
+//       console.log("het is 3,50 en checked");
+//     } else if (tarief == "3,50" && check4.checked == false) {
+//       console.log("het is 3,50 en niet checked");
+//     }
+
+//     var check5 = document.getElementById("zone5");
+//     if (tarief == "1,40" && check5.checked == true) {
+//       console.log("het is 1,40 en checked");
+//     } else if (tarief == "1,40" && check5.checked == false) {
+//       console.log("het is 1,40 en niet checked");
+//     }
+
+//     var check6 = document.getElementById("zone6");
+//     if (tarief == "0,10" && check6.checked == true) {
+//       console.log("het is 0,10 en checked");
+//     } else if (tarief == "0,10" && check6.checked == false) {
+//       console.log("het is 0,10 en niet checked");
+//     }
+
+// }})
+
+
+// ------------------------------------------
+
+// Object.keys(json).forEach(key => {
+
+//   let zone1 = document.querySelector('#zone1');
+//   zone1.addEventListener('change', kleur);
+//   let zone2 = document.querySelector('#zone2');
+//   zone2.addEventListener('change', kleur2);
+//   let zone3 = document.querySelector('#zone3');
+//   zone3.addEventListener('change', kleur3);
+//   let zone4 = document.querySelector('#zone4');
+//   zone4.addEventListener('change', kleur4);
+//   let zone5 = document.querySelector('#zone5');
+//   zone5.addEventListener('change', kleur5);
+//   let zone6 = document.querySelector('#zone6');
+//   zone6.addEventListener('change', kleur6);
+
+//   // let polygons = polygonArray.map(arr => {return L.polygon(arr.map(item => item.reverse())).addTo(map)});
+
+//   let tariefObj = json[key].tarieven[0];
+//   let tarief = Object.keys(tariefObj)[0];
+
+//   function kleur() {
+//     var check1 = document.getElementById("zone1");
+//     if (tarief == "7,50" && check1.checked == true) {
+//       console.log("het is 7,50 en checked");
+//       // polygons.setStyle({color: 'red'});
+//       // return L.polygon(arr.map(item => item.reverse()), {color: "red"}).addTo(map)
+//     } else if (tarief == "7,50" && check1.checked == false) {
+//       console.log("het is 7,50 en niet checked");
+//       // polygons.setStyle({color: 'none'});
+//       // return L.polygon(arr.map(item => item.reverse()), {color: "none"}).addTo(map)
+//     }
+//   }
+
+//   function kleur2() {
+//     var check2 = document.getElementById("zone2");
+//     if (tarief == "6,00" && check2.checked == true) {
+//       console.log("het is 6,00 en checked");
+//     } else if (tarief == "6,00" && check2.checked == false) {
+//       console.log("het is 6,00 en niet checked");
+//     }
+//   }
+
+//   function kleur3() {
+//     var check3 = document.getElementById("zone3");
+//     if (tarief == "4,50" && check3.checked == true) {
+//       console.log("het is 4,50 en checked");
+//     } else if (tarief == "4,50" && check3.checked == false) {
+//       console.log("het is 4,50 en niet checked");
+//     }
+//   }
+
+//   function kleur4() {
+//     var check4 = document.getElementById("zone4");
+//     if (tarief == "3,50" && check4.checked == true) {
+//       console.log("het is 3,50 en checked");
+//     } else if (tarief == "3,50" && check4.checked == false) {
+//       console.log("het is 3,50 en niet checked");
+//     }
+//   }
+
+//   function kleur5() {
+//     var check5 = document.getElementById("zone5");
+//     if (tarief == "1,40" && check5.checked == true) {
+//       console.log("het is 1,40 en checked");
+//     } else if (tarief == "1,40" && check5.checked == false) {
+//       console.log("het is 1,40 en niet checked");
+//     }
+//   }
+
+//   function kleur6() {
+//     var check6 = document.getElementById("zone6");
+//     if (tarief == "0,10" && check6.checked == true) {
+//       console.log("het is 0,10 en checked");
+//     } else if (tarief == "0,10" && check6.checked == false) {
+//       console.log("het is 0,10 en niet checked");
+//     }
+//   }
+// })
+
+// ---------------------------------------------------------
+
+// let zone1 = document.querySelector('#zone1');
+// zone1.addEventListener('change', kleur);
+
+// function kleur() {
+//   var check1 = document.getElementById("zone1");
+
+//   if (check1.checked == true) {
+//     console.log("wel checked")
+//   } else {
+//     console.log("niet checked")
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone2 = document.querySelector('#zone2');
+// zone2.addEventListener('change', kleur2);
+
+// function kleur2() {
+//   var check2 = document.getElementById("zone2");
+
+//   if (check2.checked == true) {
+//     console.log("wel checked")
+//   } else {
+//     console.log("niet checked")
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone3 = document.querySelector('#zone3');
+// zone3.addEventListener('change', kleur3);
+
+// function kleur3() {
+//   var check3 = document.getElementById("zone3");
+
+//   if (check3.checked == true) {
+//     console.log("wel checked")
+//   } else {
+//     console.log("niet checked")
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone4 = document.querySelector('#zone4');
+// zone4.addEventListener('change', kleur4);
+
+// function kleur4() {
+//   var check4 = document.getElementById("zone4");
+
+//   if (check4.checked == true) {
+//     console.log("wel checked")
+//   } else {
+//     console.log("niet checked")
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone5 = document.querySelector('#zone5');
+// zone5.addEventListener('change', kleur5);
+
+// function kleur5() {
+//   var check5 = document.getElementById("zone5");
+
+//   if (check5.checked == true) {
+//     console.log("wel checked")
+//   } else {
+//     console.log("niet checked")
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone6 = document.querySelector('#zone6');
+// zone6.addEventListener('change', kleur6);
+
+// function kleur6() {
+//   var check6 = document.getElementById("zone6");
+
+//   if (check6.checked == true) {
+//     console.log("wel checked")
+//   } else {
+//     console.log("niet checked")
+//   }
+// }
+
+// ---------------------------------------------------------
+
+// let zone7 = document.querySelector('#zone7');
+// zone7.addEventListener('change', kleur7);
+
+// function kleur7() {
+//   var check7 = document.getElementById("zone7");
+
+//   if (check7.checked == true) {
+//     console.log("wel checked")
+//   } else {
+//     console.log("niet checked")
+//   }
+// }
+
+
+
+// let zone1 = document.querySelector('#zone1');
+// zone1.addEventListener('change', kleur);
+
+// function kleur() {
+//     var check1 = document.getElementById("zone1");
+
+//         if (check1.checked == true) {
+//             return {
+//                 polygons: polygonArray.map(arr => {
+//                     return L.polygon(arr.map(item => item.reverse()), {
+//                         color: getColor(Object.keys(json[key].tarieven[0])[0])
+//                     }).addTo(map)
+//                     // return L.polygon(arr.map(item => item.reverse()), {color: "none"}).addTo(map)
+//                 })
+//             }
+//         } else {
+//             return {
+//                 polygons: polygonArray.map(arr => {
+//                     // return L.polygon(arr.map(item => item.reverse()), {color: getColor(Object.keys(json[key].tarieven[0])[0])}).addTo(map)
+//                     return L.polygon(arr.map(item => item.reverse()), {
+//                         color: "none"
+//                     }).addTo(map)
+//                 })
+//             }
+//         }
+//     })
+// }
+
+
+// Object.keys(json).map(key => {
+// Object.keys(json).forEach(key => {
+
+//     let tarievenArray;
+//     let tariefObj = json[key].tarieven[0];
+//     let tarief = Object.keys(tariefObj)[0];
+
+//     if(tarief === '7,50') {
+//         tarievenArray = json[key].tarieven[0];
+//     } else if(tarief === '6,00') {
+//         tarievenArray = json[key].tarieven[0];
+//     } else if(tarief === '4,50') {
+//         tarievenArray = json[key].tarieven[0];
+//     } else if(tarief === '3,50') {
+//         tarievenArray = json[key].tarieven[0];
+//     } else if(tarief === '1,40') {
+//         tarievenArray = json[key].tarieven[0];
+//     } else if(tarief === '0,10') {
+//         tarievenArray = json[key].tarieven[0];
+//     }
+
+//     return {
+//         tariefId: key,
+//         areas: tarievenArray,
+//         tarieven: json[key].tarieven,
+//         tariefs: tarievenArray.map(arr => {
+//             return L.polygon(arr.map(item => item.reverse()), {color: colors[randomNumber(0, 6)]}).addTo(map)
+//         })
+//     }
+// })
 
 // console.log(Object.keys(json));
 
@@ -67,24 +433,24 @@ console.log(dataSet);
 //     console.log(Object.keys(tariefObj)[0]);
 // })
 
-Object.keys(json).forEach(key => {
-    let tariefObj = json[key].tarieven[0];
-    let tarief = Object.keys(tariefObj)[0];
+// Object.keys(json).forEach(key => {
+//     let tariefObj = json[key].tarieven[0];
+//     let tarief = Object.keys(tariefObj)[0];
 
-    if (tarief == "7,50") {
-        console.log("het is 7,50");
-    } else if (tarief == "6,00") {
-        console.log("het is 6,00");
-    } else if (tarief == "4,50") {
-        console.log("het is 4,50");
-    } else if (tarief == "3,50") {
-        console.log("het is 3,50");
-    } else if (tarief == "1,40") {
-        console.log("het is 1,40");
-    } else if (tarief == "0,10") {
-        console.log("het is 0,10");
-    }
-})
+//     if (tarief == "7,50") {
+//         console.log("het is 7,50");
+//     } else if (tarief == "6,00") {
+//         console.log("het is 6,00");
+//     } else if (tarief == "4,50") {
+//         console.log("het is 4,50");
+//     } else if (tarief == "3,50") {
+//         console.log("het is 3,50");
+//     } else if (tarief == "1,40") {
+//         console.log("het is 1,40");
+//     } else if (tarief == "0,10") {
+//         console.log("het is 0,10");
+//     }
+// })
 
 // Object.keys(json).forEach(key => {
 //     let tariefObj = json[key].tarieven[0];
