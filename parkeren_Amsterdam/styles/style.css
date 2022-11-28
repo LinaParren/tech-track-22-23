@@ -3,18 +3,6 @@ h1 {
 	line-height: 0;
 }
 
-svg {
-	font-size: 8em;
-	line-height: 0;
-}
-
-button {
-	position: fixed;
-	top: .5em;
-	right: .5em;
-	padding: .25em;
-}
-
 section {
 	display: flex;
 	/* flex-direction: column; */

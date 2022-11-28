@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.ico" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Parkeren in Amsterdam</title>
+
+  <!-- ---- -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+  <!-- ---- -->
+
+</head>
+
+<body>
+
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+  <section>
+    <div>
+
+      <h2>Kies zone en tijd</h2>
+      <p>Klik op wat je wil zien</p>
+
+      <label for="zone1"> 7,50 </label>
+      <input type="checkbox" id="zone1" name="zone1" value="7,50">
+      <label for="zone1"> 6,00 </label>
+      <input type="checkbox" id="zone2" name="zone2" value="6,00">
+      <label for="zone2"> 4,50 </label>
+      <input type="checkbox" id="zone3" name="zone3" value="4,50">
+      <label for="zone3"> 3,50 </label>
+      <input type="checkbox" id="zone4" name="zone4" value="3,50">
+      <label for="zone4"> 2,50 </label>
+      <input type="checkbox" id="zone5" name="zone5" value="2,50">
+      <label for="zone5"> 1,40 </label>
+      <input type="checkbox" id="zone6" name="zone6" value="1,40">
+      <label for="zone6"> 0,10 </label>
+      <input type="checkbox" id="zone7" name="zone7" value="0,10">
+
+    </div>
+
+    <a href="adres.html">Vul zelf adres in</a>
+
+    <div id="map"></div>
+  </section>
+
+
+
+  <script type="module" src="./scripts/test.js"></script>
+  <script type="module" src="./mapview.js"></script>
+  <!-- <script type="module" src="./scripts/main.js"></script> -->
+
+</body>
+
+</html>
