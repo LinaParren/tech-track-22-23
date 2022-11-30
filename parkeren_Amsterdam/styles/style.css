@@ -5,7 +5,7 @@
   }
 
 
-/* First screen */
+/* FIRST SCREEN */
 #firstscreen {
 	height: 100vh;
 	margin-bottom: 0;
@@ -19,13 +19,6 @@
 	padding-bottom: 3em;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-#firstscreen #footer {
-	color: black;
-	font-size: 0.5em;
-	margin-bottom: 0.5em;
-	/* bottom: 1em; */
 }
 
 h2 {
@@ -48,10 +41,22 @@ p {
 }
 
 
-/* Second screen */
+/* SECOND SCREEN */
+#info section:first-of-type {
+	height: 20%;
+}
+
+#info section:nth-of-type(2) {
+	height: 70%;
+}
+
+#info section:last-of-type {
+	display: flex;
+	flex-direction: column;
+}
+
 #secondscreen #logo {
 	width: 12em;
-	margin-bottom: 2em;
 }
 
 #secondscreen {
@@ -63,14 +68,11 @@ p {
 	display: flex;
 	flex-direction: column;
 	width: 30%;
-	/* height: 100vh; */
 	padding-left: 2em;
 	padding-top: 1em;
-	height: 100vh;
 }
 
 #map { 
-	height: 100vh; 
 	width: 70%;
 }
 
@@ -79,7 +81,7 @@ p {
 	margin-bottom: 1em;
 }
 
-
+/* Colors for the different zones */
 #zone1 {
 	color: #FF0000;
 }
@@ -101,14 +103,13 @@ p {
 
 
 input[type=checkbox] {
-	vertical-align: middle;
-	position: relative;
 	order: 2;
 	margin-left: 3em;
 }
+
 label {
 	display: flex;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 }
 
 

@@ -45,8 +45,11 @@
       <!-- Left part: choose zone -->
       <div id="info">
 
-        <img id="logo" src="./images/logo.png" alt="Logo Gemeente Amsterdam">
+        <section>
+          <img id="logo" src="./images/logo.png" alt="Logo Gemeente Amsterdam">
+        </section>
 
+        <section>
         <!-- Checkboxes to choose zone -->
         <p>Vink een prijs aan om de bijbehorende zones te bekijken</p>
         <label id="zone1">
@@ -61,11 +64,13 @@
           <input type="checkbox" value="2,50"> &euro;2,50 </label>
         <label id="zone6">
           <input type="checkbox" value="1,40"> &euro;1,40 </label>
+        </section>
 
-        <button type="button" id="Ams" onClick="zoomAms()">Wat gebeurt hier?</button>
-        <button type="button" id="Lim" onClick="zoomLim()">En hier?</button>
-
-        <p id="footer">Lina Parren, 2022</p>
+        <section>
+          <button type="button" id="Lim" onClick="zoomLim()">Gratis parkeren? Klik hier!</button>
+          <button type="button" id="Ams" onClick="zoomAms()" style="display:none">Terug naar Amsterdam</button>
+          <p id="footer">Lina Parren, 2022</p>
+        </section>
 
       </div>
 
