@@ -280,9 +280,6 @@
 //     } else if (case '1,40') {
 //       return 'blue';
 //       break;
-//     } else if (case '0,10') {
-//       return 'purple';
-//       break;
 //     }
 //   }
 // }

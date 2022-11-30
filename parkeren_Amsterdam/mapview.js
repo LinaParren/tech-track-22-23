@@ -1,12 +1,6 @@
-/* <reference path="./typings/index.d.ts" /> */
-// import { color } from "d3";
 import json from "./tarieven.json" assert {
   type: "json"
 };
-// import "./scripts/test.js"
-
-
-// ---------------------------------------------------------
 
 var map = L.map("map").setView([52.3702157, 4.8951679], 12);
 
@@ -33,25 +27,22 @@ console.log(json);
 function getColor(tarief) {
     switch (tarief) {
         case '7,50':
-            return 'red';
+            return '#FF0000';
             break;
         case '6,00':
-            return 'orange';
+            return '#FF9D00';
             break;
         case '4,50':
-            return 'yellow';
+            return '#F7E405';
             break;
         case '3,50':
-            return 'gold';
+            return '#6CD800';
             break;
         case '2,50':
-            return 'brown';
+            return '#0062FF';
             break;
         case '1,40':
-            return 'blue';
-            break;
-        case '0,10':
-            return 'purple';
+            return '#BE00EB';
             break;
         default:
             return 'black';
@@ -105,12 +96,3 @@ function changeCheckbox(event) {
 
 console.log(dataSet);
 
-
-// ------------------------------------------
-
-
-// let adres = document.querySelector("#adres");
-// adres.addEventListener("click", adresCheck);
-
-// function adresCheck() {
-//   var checkAdres = document.getElementById("zone2");

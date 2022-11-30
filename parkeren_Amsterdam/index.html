@@ -41,8 +41,7 @@
       <label for="zone5"> 2,50 </label>
       <input type="checkbox" id="zone6" name="zone6" value="1,40">
       <label for="zone6"> 1,40 </label>
-      <input type="checkbox" id="zone7" name="zone7" value="0,10">
-      <label for="zone7"> 0,10 </label>
+    
 
       <hr>
 
@@ -87,20 +86,60 @@
   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
 
-  <section>
-    <div>
 
-      <h2>Wat wil je doen?</h2>
-      <p>Klik op wat je wil zien</p>
-
-      <a href="kaart.html">Bekijk kaart</a>
-      <a href="adres.html">Vul zelf adres in</a>
+  <!-- Article that contains scroll function -->
+  <article class="scroll">
 
 
+    <!-- First section: introduction -->
+    <section id="firstscreen">
+
+      <img id="logo" src="./images/logo.png" alt="Logo Gemeente Amsterdam">
+
+      <h2>Op deze website vind je een overzicht van hoeveel euro het kost om te parkeren in Amsterdam, per zone per
+        uur.</h2>
+      <p>Scroll naar beneden om te beginnen!</p>
+
+      <!-- Button, down to next screen -->
+      <img id="arrowdown" src="./images/arrowdown.png" alt="Arrow to next screen">
+
+    </section>
 
 
-  <script type="module" src="./scripts/test.js"></script>
-  <script type="module" src="./mapview.js"></script>
+    <!-- Second section: choose zone and view map -->
+    <section id="secondscreen">
+
+      <!-- Left part: choose zone -->
+      <div id="info">
+
+        <img id="logo" src="./images/logo.png" alt="Logo Gemeente Amsterdam">
+
+        <!-- Checkboxes to choose zone -->
+        <p>Vink een prijs aan om de bijbehorende zones te bekijken</p>
+        <label id="zone1">
+          <input type="checkbox" value="7,50"> &euro;7,50 </label>
+        <label id="zone2">
+          <input type="checkbox" value="6,00"> &euro;6,00 </label>
+        <label id="zone3">
+          <input type="checkbox" value="4,50"> &euro;4,50 </label>
+        <label id="zone4">
+          <input type="checkbox" value="3,50"> &euro;3,50 </label>
+        <label id="zone5">
+          <input type="checkbox" value="2,50"> &euro;2,50 </label>
+        <label id="zone6">
+          <input type="checkbox" value="1,40"> &euro;1,40 </label>
+
+      </div>
+
+      <!-- Right part: view map -->
+      <div id="map"></div>
+
+    </section>
+
+  </article>
+
+  <!-- Add script to load JavaScript -->
+  <script type="module" src="./scripts/main.js"></script>
 
 </body>
 
