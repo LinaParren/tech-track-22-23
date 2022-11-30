@@ -98,7 +98,7 @@ function changeCheckbox(event) {
 }
 
 
-// Easter egg, zoom to my addresses
+// Easter egg, zoom to my current addresses
 const Amsterdam = document.querySelector("#Ams");
 Amsterdam.addEventListener("click", zoomAms);
 const Limburg = document.querySelector("#Lim");
@@ -110,5 +110,6 @@ function zoomAms() {
 function zoomLim() {
   map.setView([51.170870781573484, 5.820799073861629], 18);
 }
+
 
  
