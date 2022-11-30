@@ -8,19 +8,18 @@
   <link rel="stylesheet" href="./styles/style.css">
   <title>Parkeren in Amsterdam</title>
 
+  <!-- Needed to add Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
-
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
 </head>
+
 
 <body>
 
-  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
-
-
   <!-- Article that contains scroll function -->
-  <article class="scroll">
+  <article id="scroll">
 
 
     <!-- First section: introduction -->
@@ -28,12 +27,14 @@
 
       <img id="logo" src="./images/logo.png" alt="Logo Gemeente Amsterdam">
 
-      <h2>Op deze website vind je een overzicht van hoe veel euro het kost om te parkeren in Amsterdam, per zone per
+      <h2>Op deze website vind je een overzicht van hoeveel euro het kost om te parkeren in Amsterdam, per zone per
         uur.</h2>
-      <p>Scroll naar beneden om te beginnen!</p>
+      <p>Scroll naar beneden om jouw gewenste zone te zoeken!</p>
 
       <!-- Button, down to next screen -->
       <img id="arrowdown" src="./images/arrowdown.png" alt="Arrow to next screen">
+
+      <p id="footer">Lina Parren, 2022</p>
 
     </section>
 
@@ -61,6 +62,8 @@
         <label id="zone6">
           <input type="checkbox" value="1,40"> &euro;1,40 </label>
 
+        <p id="footer">Lina Parren, 2022</p>
+
       </div>
 
       <!-- Right part: view map -->
@@ -71,8 +74,8 @@
   </article>
 
   <!-- Add script to load JavaScript -->
-  <script type="module" src="./scripts/main.js"></script>
+  <script type="module" src="./scripts/mapview.js"></script>
 
 </body>
 
-</html> 
+</html>

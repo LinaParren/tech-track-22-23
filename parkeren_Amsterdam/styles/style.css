@@ -8,6 +8,8 @@
 /* First screen */
 #firstscreen {
 	height: 100vh;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 #firstscreen #logo {
@@ -17,6 +19,13 @@
 	padding-bottom: 3em;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#firstscreen #footer {
+	color: black;
+	font-size: 0.5em;
+	margin-bottom: 0.5em;
+	/* bottom: 1em; */
 }
 
 h2 {
@@ -54,6 +63,7 @@ p {
 	display: flex;
 	flex-direction: column;
 	width: 30%;
+	/* height: 100vh; */
 	padding-left: 2em;
 	padding-top: 1em;
 	height: 100vh;
@@ -102,14 +112,13 @@ label {
 }
 
 
-
 /* Scroll function */
-.scroll {
+#scroll {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
 
-.scroll section {
+#scroll section {
     scroll-snap-align: start;
 }
