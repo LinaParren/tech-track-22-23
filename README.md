@@ -10,12 +10,10 @@ View my wiki <a href ="https://github.com/LinaParren/tech-track-22-23/wiki">here
 <br>
 
 ## Concept
-Write down concept here
 
 <br>
 
 ## Functions
-Write down function of the app here
 
 <br>
 
